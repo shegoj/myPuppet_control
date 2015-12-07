@@ -49,3 +49,6 @@ mod 'epel',
   :git => 'https://github.com/stahnma/puppet-module-epel.git'
 
 ###############################################################################
+mod 'stingray',
+  :git => 'https://github.com/riverbed/stingray-puppet.git'
+
