@@ -15,6 +15,9 @@ node 'xmaster.vagrant.vm' {
 
 node 'xagent.vagrant.vm' {
   include role::base
+  class {'stingray':
+	  accept_license => 'accept',
+  } 
 }
 
 node default {
