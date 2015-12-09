@@ -19,6 +19,7 @@ node 'xagent.vagrant.vm' {
   rest_user => 'admin',
   rest_pass => 'admin',
   rest_ip   => '10.65.84.114',
+  rest_port  => '9090'
 }
 
 include brocadevtm::monitors_full_http
