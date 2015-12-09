@@ -49,6 +49,6 @@ mod 'epel',
   :git => 'https://github.com/stahnma/puppet-module-epel.git'
 
 ###############################################################################
-mod 'stingray',
-  :git => 'https://github.com/riverbed/stingray-puppet.git'
+mod 'BrocadevTM',
+  :git => 'https://github.com/TuxInvader/Puppet-Brocade-vTM.git'
 
