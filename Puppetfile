@@ -53,6 +53,9 @@ mod 'brocadevtm',
   :git => 'https://github.com/TuxInvader/Puppet-Brocade-vTM.git'
 mod 'stingray',
   :git => 'https://github.com/riverbed/stingray-puppet.git'
+mod 'brocade_wrapper',
+  :git => 'https://github.com/shegoj/brocade_wrapper.git'
+
 
 
 

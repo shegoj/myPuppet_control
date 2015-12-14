@@ -1,3 +1,71 @@
----
-classes: role::base
+lasses: role::base
 profile::puppet::agent::master: xmaster.vagrant.vm
+stuff:
+ fruit: apple
+ name: steve
+ sport: baseball
+
+steelapp-server:
+     server: 192.168.0.21
+     port: "9070"
+     user: "admin"
+     pass: "admin"
+
+
+traffic-ip-group:
+     h1-stg1-umv-third-party-mocks.ovp.bskyb.com:
+         machines:
+           - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta05-v00.devops.stg1.ovp.bskyb.com"
+         ipaddresses:
+           - "10.65.84.45"
+         basic__multicast:
+           - "239.191.130.52"
+     h2-stg2-umv-third-party-mocks.ovp.bskyb.com:
+         machines:
+           - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta05-v00.devops.stg1.ovp.bskyb.com"
+         ipaddresses:
+           - "10.65.84.46"
+         basic__multicast:
+           - "239.191.130.53"
+
+virtual-servers:
+     h1-stg1-umv-third-party-mocks.ovp.bskyb.com:
+         listen-ontraffic-ips:
+           - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta05-v00.devops.stg1.ovp.bskyb.com"
+         pool : "10.65.84.45"
+     s1-stg1-umv-third-party-mocks.ovp.bskyb.com:
+         listen-ontraffic-ips:
+           - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta05-v00.devops.stg1.ovp.bskyb.com"
+         pool : "10.65.84.45"
+pools:
+     h1-stg1-umv-third-party-mocks.ovp.bskyb.com:
+         nodes:
+           - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta05-v00.devops.stg1.ovp.bskyb.com"
+         monitors:
+           - "h1-stg1-umv-third-party-mocks.ovp.bskyb.com"
+           - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta05-v00.devops.stg1.ovp.bskyb.com"
+     s1-stg1-umv-third-party-mocks.ovp.bskyb.com:
+         nodes:
+           - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
+         monitors:
+           - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta05-v00.devops.stg1.ovp.bskyb.com"
+
+monitors:
+     h1-stg1-umv-third-party-mocks.ovp.bskyb.com:
+         path: "/__admin"
+
+
