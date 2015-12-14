@@ -6,7 +6,7 @@ stuff:
  sport: baseball
 
 steelapp-server:
-     server: 192.168.0.21
+     server: 10.65.84.72 
      port: "9070"
      user: "admin"
      pass: "admin"
