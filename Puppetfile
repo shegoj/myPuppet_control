@@ -50,8 +50,7 @@ mod 'epel',
 
 ###############################################################################
 mod 'brocadevtm',
-  :git => 'https://github.com/TuxInvader/Puppet-Brocade-vTM.git',
-  :ref => '>=0.35.0'
+  :git => 'https://github.com/TuxInvader/Puppet-Brocade-vTM.git'
 mod 'stingray',
   :git => 'https://github.com/riverbed/stingray-puppet.git'
 mod 'brocade_wrapper',
