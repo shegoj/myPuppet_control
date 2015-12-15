@@ -15,14 +15,7 @@ node 'xmaster.vagrant.vm' {
 
 node 'xagent.vagrant.vm' {
   include role::base
-  class { 'brocadevtm':
-  rest_user => 'admin',
-  rest_pass => 'admin',
-  rest_ip   => '10.65.84.114',
-  rest_port  => '9090'
-}
-
-include brocadevtm::monitors_full_http
+  include brocade_wrapper
 }
 
 node default {
