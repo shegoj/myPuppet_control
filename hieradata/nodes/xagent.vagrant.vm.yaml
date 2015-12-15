@@ -1,18 +1,14 @@
-lasses: role::base
+classes: role::base
 profile::puppet::agent::master: xmaster.vagrant.vm
-stuff:
- fruit: apple
- name: steve
- sport: baseball
 
 steelapp-server:
-     server: 10.65.84.72 
+     server: 10.65.84.72
      port: "9070"
      user: "admin"
      pass: "admin"
 
 
-traffic-ip-group:
+steelapp::traffic-ip-group:
      h1-stg1-umv-third-party-mocks.ovp.bskyb.com:
          machines:
            - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
@@ -32,7 +28,7 @@ traffic-ip-group:
          basic__multicast:
            - "239.191.130.53"
 
-virtual-servers:
+steelapp::virtual-servers:
      h1-stg1-umv-third-party-mocks.ovp.bskyb.com:
          listen-ontraffic-ips:
            - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
@@ -45,27 +41,34 @@ virtual-servers:
            - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
            - "h1sta05-v00.devops.stg1.ovp.bskyb.com"
          pool : "10.65.84.45"
-pools:
+
+steelapp::pools:
      h1-stg1-umv-third-party-mocks.ovp.bskyb.com:
          nodes:
-           - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
-           - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
-           - "h1sta05-v00.devops.stg1.ovp.bskyb.com"
+           - "h1sta03-v00.devops.stg1.ovp.bskyb.com:80"
+           - "h1sta04-v00.devops.stg1.ovp.bskyb.com:80"
          monitors:
            - "h1-stg1-umv-third-party-mocks.ovp.bskyb.com"
            - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
-           - "h1sta05-v00.devops.stg1.ovp.bskyb.com"
-     s1-stg1-umv-third-party-mocks.ovp.bskyb.com:
-         nodes:
-           - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
-           - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
-         monitors:
-           - "h1sta03-v00.devops.stg1.ovp.bskyb.com"
-           - "h1sta04-v00.devops.stg1.ovp.bskyb.com"
-           - "h1sta05-v00.devops.stg1.ovp.bskyb.com"
 
-monitors:
+steelapp::monitors:
      h1-stg1-umv-third-party-mocks.ovp.bskyb.com:
          path: "/__admin"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
